@@ -7,7 +7,7 @@ class CalculationClass
      * @param int $price
      * @return int
      */
-    public function taxCalculation($price)
+    public function taxCalculation(int $price)
     {
         return (int)round($price * 1.05);
     }
