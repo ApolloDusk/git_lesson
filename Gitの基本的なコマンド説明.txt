@@ -1,0 +1,156 @@
+<!-- wp:heading -->
+<h2>Gitの抑えておくべき機能</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3>clone / branch / add / commit</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>プロジェクトで開発を行う際に使われるGit内の機能、役割について触れておきます<br></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4><strong>クローン（clone）</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>リモートリポジトリをコピーし自分の環境にローカルリポジトリとワークツリーを作成する機能です。</p><p>これを行うことで、自身のPCにGitによる管理体制を構築できます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:media-text {"mediaId":2036,"mediaType":"image"} -->
+<div class="wp-block-media-text alignwide"><figure class="wp-block-media-text__media"><img src="https://dawn-phase2-dev.s3-ap-northeast-1.amazonaws.com/curriculum/renewal_202107/S7-3-1.png" alt="" class="wp-image-2036"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+<p>「git clone」の役割はリモートリポジトリから、最初に自分のPCにフォルダを持ってくるときの作業です。(ダウンロードに近いです) </p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:media-text -->
+
+<!-- wp:heading {"level":4} -->
+<h4><strong>ブランチ（branch）</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>ブランチは枝という意味であり、<span style="background-color: rgb(247, 198, 206);">実際のプロジェクトの状態から枝分かれさせブランチを分岐させることにより<b>本体に影響を与えることなく自身の作業を進める</b>ことができます。</span>他のメンバーの作業の影響を受けずに開発が進められますし、逆に自分の作業で他のメンバーに影響を与えないこともできます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:media-text {"mediaPosition":"right","mediaId":2037,"mediaType":"image"} -->
+<div class="wp-block-media-text alignwide has-media-on-the-right"><figure class="wp-block-media-text__media"><img src="https://dawn-phase2-dev.s3-ap-northeast-1.amazonaws.com/curriculum/renewal_202107/S7-3-2.png" alt="" class="wp-image-2037"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+<p>ブランチを新しく作るのは、自分専用の作業範囲を作り上げて、メンバーに影響を与えないためです。</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:media-text -->
+
+<!-- wp:heading {"level":4} -->
+<h4><strong>コミット（commit）</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>コミットはローカルリポジトリとワークツリー(自分の作業場所)での変更差分の登録や保存といえます。リモートリポジトリにはすべてのユーザーが行ったコミットが履歴として残ります。</p><p>コードを書いて変更をコミット(保存)する際には一緒にコメントを残すことができます。これをコミットメッセージといいます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:media-text {"mediaId":2038,"mediaType":"image"} -->
+<div class="wp-block-media-text alignwide"><figure class="wp-block-media-text__media"><img src="https://dawn-phase2-dev.s3-ap-northeast-1.amazonaws.com/curriculum/renewal_202107/S7-3-3.png" alt="" class="wp-image-2038"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+<p> 「git commit」で前回のコミットから、現時点でのコードの変更箇所を履歴として保存することができます。<br>保存するときに、他のメンバーに内容をわかってもらうために、メモも残します。 </p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:media-text -->
+
+<!-- wp:heading {"level":4} -->
+<h4><strong>アド（add）</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>アドをすることでワークツリーからインデックスという領域へ変更内容をあげることができます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>インデックスって？</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>ワークツリーからローカルリポジトリに変更内容を送る前に、内容を一時保存するインデックスというエリアが用意されています。</p><p>コミットによる記録は１回に１個の<b>コメントを入れることができます</b>が、もしも変更するファイルが複数の場合、１個１個にコメントを残すのは大変な作業になることでしょう。複数の変更に対してまとめて１つの意図を<b>コミットメッセージ</b>として残したい場合もこれでは不便です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:media-text {"mediaId":2039,"mediaType":"image"} -->
+<div class="wp-block-media-text alignwide"><figure class="wp-block-media-text__media"><img src="https://dawn-phase2-dev.s3-ap-northeast-1.amazonaws.com/curriculum/renewal_202107/S7-3-4.png" alt="" class="wp-image-2039"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+<p>もし「git add」がなければ、一つ一つのファイルの変更履歴を保存(コミット)しなくてはなりません。</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:media-text -->
+
+<!-- wp:paragraph -->
+<p><strong>「インデックス」というエリアと「アド」の機能のおかげで複数ファイルを送るときにひとまとめに「コミット」をすることができます。</strong>ひとまとめにする粒度をチームやプロジェクトで工夫することにより、開発効率をあげることができるでしょう。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>色々なファイルのソースコードを変更　➡　addで必要なファイルをインデックスにあげる　➡　コミットで作業内容をまとめてローカルリポジトリに履歴として残す。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:media-text {"mediaId":2040,"mediaType":"image"} -->
+<div class="wp-block-media-text alignwide"><figure class="wp-block-media-text__media"><img src="https://dawn-phase2-dev.s3-ap-northeast-1.amazonaws.com/curriculum/renewal_202107/S7-3-5.png" alt="" class="wp-image-2040"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+<p>「git add」を使って、変更内容のあるファイルを、まとめて「インデックス」に入れておくことで、複数ファイルの履歴をコミット１回で保存することができます。</p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:media-text -->
+
+<!-- wp:paragraph -->
+<p>上記の流れで自身のPC内にあるローカルリポジトリにプロジェクトの状態を管理をしていくことになります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3>push / pull / merge&nbsp;</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>次に紹介する３つは、自身のPC内で作ってきたローカルリポジトリとネット上に保管されているリモートリポジトリとの間でやりとりするときに使われる機能です。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4>プル（pull）とプッシュ（push）</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>リモートリポジトリがすでにある場合、そこからローカルリポジトリへデータを持ってくる必要があります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>その場合は<b>「プル（pull）」</b>で持ってくることができます。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><b>リモートリポジトリはデフォルトで「origin」という名前</b>がつけられているため、「pull origin master」というコマンドは<b>「origin（リモートリポジトリ）にあるmasterというブランチからデータを持ってくる」</b>ということになります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>ではコードを書き終わってそれをリモートに反映しようと思います。この場合は<b>「プッシュ（push）」</b>を使います。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>「origin」というリモートリポジトリの「master」というブランチにデータについて変更（反映）させるということになります。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><b>「今のコミットの内容をリモート先のmasterブランチに押す（反映させる）」</b>と指示を出しています。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:media-text {"mediaPosition":"right","mediaId":2041,"mediaType":"image"} -->
+<div class="wp-block-media-text alignwide has-media-on-the-right"><figure class="wp-block-media-text__media"><img src="https://dawn-phase2-dev.s3-ap-northeast-1.amazonaws.com/curriculum/renewal_202107/S7-3-6.png" alt="" class="wp-image-2041"></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+<p><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space: pre-wrap;">「pull」はリモートから自分のPCにあるローカルリポジトリにデータ履歴を反映します。ダウンロードに近いイメージです。</span><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; white-space: pre-wrap;">「push」はリモートに、自分のコミットまでしたデータ履歴を渡します。これはアップロードに近いイメージですね。</span></p><p></p>
+<!-- /wp:paragraph --></div></div>
+<!-- /wp:media-text -->
+
+<!-- wp:heading {"level":4} -->
+<h4><strong>マージ（merge）</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>自分のブランチでの作業が終わり内容を反映したいときがあります。この時の統合作業をマージといいます。</p><p>いつ統合するかやブランチを残しておくかなどの判断は開発のリーダーやディレクターが執り行うことが多いです。それは間違ったマージはサービスの質の低下に直結するからです。</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:media-text {"mediaId":2042,"mediaType":"image"} -->
+<div class="wp-block-media-text alignwide"><figure class="wp-block-media-text__media"><img src="https://dawn-phase2-dev.s3-ap-northeast-1.amazonaws.com/curriculum/renewal_202107/S7-3-7.png" alt="" class="wp-image-2042"></figure></div><div class="wp-block-media-text alignwide"><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+<p>「merge」コマンドでそれぞれのブランチで反映したデータをまとめ、修正を本体に反映していきます。</p></div></div>最終的にはmaster（マスター）ブランチと呼ばれるところにブランチを集約させることで１つのプロジェクトが完成していきます。<br><h2 style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(51, 51, 51);"><span style="color: inherit; font-family: inherit;">まとめ</span></h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><li> Gitを使用する上で重要なコマンドとして「clone（クローン）」「branch（ブランチ）」「add（アド）」「commit（コミット）」「push（プッシュ）」「pull（プル）」「merge（マージ）」がある</li><li>ファイルのバージョン管理は「ファイルの変更履歴を管理する」ことであり、複数人で開発する際は特に重宝する</li></ul><p style="font-size: 14px;">ここまでGitの機能について説明をさせていただきました。ですが、このように説明されても正直よくわからない部分が多いと思います。</p><p style="font-size: 14px;">これは各言語やそれを扱うどのツールについても言えることですが、Gitについても同様に「実際に使ってみる」これが一番わかりやすいと思います。</p><p style="font-size: 14px;">この記事ではあくまでもGitを扱う上での最低限の機能と流れのみの説明になりますが、この後のGitの応用の記事にて実際にGitをファイル管理に利用していくので、その時々で徐々にGitを使いこなせてもらえればと思います。<br></p><div><br></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
